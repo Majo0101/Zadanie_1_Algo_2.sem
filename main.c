@@ -39,11 +39,12 @@ void swapChar(char *a, char *b){
 
     if(a != b) {
         strcpy(buffer, a);
-        strcpy(a, b);    // pri rovnakych pointroch treba zrusit zmenu aby to nespadlo
+        strcpy(a, b);
         strcpy(b, buffer);
-
-        free(buffer);
     }
+
+    free(buffer);
+
 }
 
 int main() {
