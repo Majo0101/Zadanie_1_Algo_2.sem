@@ -37,11 +37,13 @@ void swapChar(char *a, char *b){
     char *buffer;
     buffer = (char *) malloc(8);
 
-    strcpy(buffer , a);
-    strcpy(a, b);
-    strcpy(b , buffer);
+    if(a != b) {
+        strcpy(buffer, a);
+        strcpy(a, b);    // pri rovnakych pointroch treba zrusit zmenu aby to nespadlo
+        strcpy(b, buffer);
 
-    free(buffer);
+        free(buffer);
+    }
 }
 
 int main() {
